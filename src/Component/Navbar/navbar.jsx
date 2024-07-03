@@ -5,6 +5,7 @@ import bars from '../../assets/bars-solid.svg'
 import logo from '../../assets/logo.png'
 import search from '../../assets/search-solid.svg'
 import Avatar from '../Avatar/Avatar'
+import './navbar.css'
 
 function navbar() {
     var User=null; 
@@ -17,7 +18,7 @@ function navbar() {
             </button>
             <div className="navbar-1">
                 <Link to ='/' className='nav-item nav-logo'>
-                <img src={logo} alt="logo" width="50" /></Link>
+                <img src={logo} alt="logo" width="120" /></Link>
                 <Link to='/' className='nav-item nav-btn res-nav'>
                 About</Link>
                 <Link to='/' className='nav-item nav-btn res-nav'>
