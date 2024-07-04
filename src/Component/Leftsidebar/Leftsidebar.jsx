@@ -15,7 +15,7 @@ const Leftsidebar = ({slidein,handleslidein }) => {
       className="left-sidebar"
       style={slidein ? slideinstyle : slideoutstyle}>
       <nav className="side-nav">
-        <button onClick={() => handleslidein()} className="nav-btn">
+        <button onClick={() => handleslidein()} className="nav-btnn">
           <NavLink to='/' className="side-nav-links" activeclassname='active'>
             <p>Home</p>
           </NavLink>
@@ -24,18 +24,18 @@ const Leftsidebar = ({slidein,handleslidein }) => {
           <div>
             <p>PUBLIC</p>
           </div>
-          <button className='nav-btn'>
+          <button className='nav-btnn'>
             <NavLink to='/Questions' className='side-nav-links' activeclassname='active'>
               <img src={Globe} alt="globe" />
               <p style={{ paddingLeft: '10px' }}> Questions </p>
             </NavLink>
           </button>
-          <button className="nav-btn">
+          <button className="nav-btnn">
             <NavLink to='/Tags' className='side-nav-links' activeclassname='active' style={{ paddingLeft: "40px" }}>
               <p>Tags</p>
             </NavLink>
           </button>
-          <button className='nav-btn'>
+          <button className='nav-btnn'>
             <NavLink to='/Users' className='side-nav-links' activeclassname='active' style={{ paddingLeft: "40px" }}>
               <p>Users</p>
             </NavLink>
