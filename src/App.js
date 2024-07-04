@@ -3,6 +3,7 @@ import './App.css';
 import { useEffect, useState } from 'react';
 import Navbar from './Component/Navbar/navbar';
 import { BrowserRouter as Router } from 'react-router-dom';
+import AllRoutes from './Allroutes';
 
 function App() {
   const [slidein, setslidein]=useState(true)
@@ -21,6 +22,7 @@ function App() {
     <div className="App">
       <Router>
         <Navbar handleslidein={handleslidein}/>
+        <AllRoutes slidein={slidein} handleslidein={handleslidein}/>
       </Router>
     </div>
   );
