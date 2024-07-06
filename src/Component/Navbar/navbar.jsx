@@ -7,8 +7,9 @@ import search from '../../assets/search-solid.svg'
 import Avatar from '../Avatar/Avatar'
 import './navbar.css'
 
-function navbar({handleslidein}) {
+function Navbar({handleslidein}) {
     var User=null; 
+    const navigate=useNavigate();
 
   return (
     <nav className="main-nav">
@@ -30,7 +31,7 @@ function navbar({handleslidein}) {
             </div>
             <div className="navbar-2">
                 {User==null ?(
-                    <Link to='/' className='nav-item nav-links'>
+                    <Link to='/Auth' className='nav-item nav-links'>
                         Log In
                     </Link>
                 ):(
@@ -46,4 +47,4 @@ function navbar({handleslidein}) {
   )
 }
 
-export default navbar
+export default Navbar
