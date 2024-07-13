@@ -5,6 +5,7 @@ import Askquestion from './pages/Askquestion/Askquestion'
 import Auth from './pages/Auth/Auth'
 import Question from './pages/Question/Question';
 import Displayquestion from './pages/Question/Displayquestion';
+import Tags from './pages/Tags/Tags';
 function AllRoutes({ slidein, handleslidein }) {
   return (
     <Routes>
@@ -13,7 +14,7 @@ function AllRoutes({ slidein, handleslidein }) {
       <Route path='/Auth' element={<Auth/>}/>
       <Route path='/Question' element={<Question slidein={slidein} handleslidein={handleslidein}/>}/>
       <Route path='/Question/:id' element={<Displayquestion slidein={slidein} handleslidein={handleslidein}/>}/>
-
+      <Route path='/Tags' element={<Tags slidein={slidein} handleslidein={handleslidein}/>}/>
     </Routes>
   )
 }
