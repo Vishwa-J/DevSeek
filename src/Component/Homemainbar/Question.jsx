@@ -3,10 +3,11 @@ import {Link} from 'react-router-dom'
 import moment from "moment"
 
 const Question = ({question}) => {
+    // console.log(question);
   return (
     <div className="display-question-container">
         <div className="display-votes-ans">
-            <p>{question.upvote.length -question.downvote.length}</p>
+            <p>{question.upvote.length - question.downvote.length}</p>
         </div>
         <div className="display-votes-ans">
             <p>{question.noofanswers}</p>

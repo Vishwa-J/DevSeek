@@ -8,7 +8,32 @@ function Homemainbar() {
     const user=1;
     const location=useLocation();
     const navigate=useNavigate();
-    const questionlist=null;
+    const questionlist=[{
+        _id:"q1",
+        questiontitle:"How to implement binary search hghjb",
+        questionbody:"I am trying to implementjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj",
+        questiontags:["Python","Mern"],
+        noofanswers:2,
+        upvote:["user123","user456"],
+        downvote:["user789"],
+        userposted:"codeNewbie",
+        userid:"u12345",
+        askedon:"2024-06-10T12:00:00Z",
+        answer:[
+            {
+                answerbody:"Here's a simple example",
+                useranswered:"algoexpert",
+                userid:"u67890",
+                answeredon:"2024-06-10T13:00:00Z"
+            },
+            {
+                answerbody:"To add to the previous one",
+                useranswered:"TechGuru",
+                userid:"u112233",
+                answeredon:"2024-06-10T14:00:00Z"
+            }
+        ]
+      }];
     const checkauth=()=>{
         if(user===null){
             alert("Login or signup to ask a question")
@@ -33,8 +58,8 @@ function Homemainbar() {
                 <h1>Loading...</h1>
             ):(
                 <>
-                <p>{questionlist.data.length}questions</p>
-                <Questionlist questionlist={questionlist.data}/>
+                <p>{questionlist.length}questions</p>
+                <Questionlist questionlist={questionlist}/>
                 </>
             )
             }
