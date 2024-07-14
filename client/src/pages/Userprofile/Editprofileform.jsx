@@ -1,4 +1,5 @@
 import React,{useState} from 'react'
+import './Userprofile.css'
 
 const Editprofileform = ({currentuser, setswitch}) => {
     const [name, setname] =useState(currentuser?.name)
@@ -27,7 +28,7 @@ const Editprofileform = ({currentuser, setswitch}) => {
             <textarea name="" id="about" cols="30" rows="10" value={about} onChange={(e)=>setabout(e.target.value)}></textarea>
             </label>
             <br/>
-            <input type="submit" value="save profile" className='user-submit-btn'/>
+            <input type="submit" value="Save Profile" className='user-submit-btn'/>
             <button type='button' className='user-cancel-btn' onClick={()=>setswitch(false)}>Cancel</button>
         </form>
     </div>
