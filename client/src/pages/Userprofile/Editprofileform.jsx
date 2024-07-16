@@ -7,7 +7,7 @@ const Editprofileform = ({currentuser, setswitch}) => {
     const [tags, settags]=useState([])
     const handlesubmit=(e)=>{
         e.preventDefault()
-        if(tags[0]==''||tags.length===0){
+        if(tags[0]===''||tags.length===0){
             alert('update tags field');
         }
         setswitch(false)
@@ -26,6 +26,11 @@ const Editprofileform = ({currentuser, setswitch}) => {
             <label htmlFor="about">
             <h3>About me</h3>
             <textarea name="" id="about" cols="30" rows="10" value={about} onChange={(e)=>setabout(e.target.value)}></textarea>
+            </label>
+            <label htmlFor="tags">
+                <h3>Watched tags</h3>
+                <p>Add tags separated by 1 space</p>
+                <input type="text" id='tags' onChange={(e)=>settags(e.target.value.split(" "))}/>
             </label>
             <br/>
             <input type="submit" value="Save Profile" className='user-submit-btn'/>
