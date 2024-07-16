@@ -1,15 +1,16 @@
-import React from 'react'
-import './Leftsidebar.css'
-import { NavLink } from 'react-router-dom'
-import Globe from "../../assets/Globe.svg"
+import React from 'react';
+import './Leftsidebar.css';
+import { NavLink } from 'react-router-dom';
+import Globe from "../../assets/Globe.svg";
 
-const Leftsidebar = ({slidein,handleslidein }) => {
+const Leftsidebar = ({ slidein, handleslidein }) => {
   const slideinstyle = {
-    transform:"translateX(0%)",
+    transform: "translateX(0%)",
   };
-  const slideoutstyle={
+  const slideoutstyle = {
     transform: "translateX(-100%)",
-  }
+  };
+
   return (
     <div
       className="left-sidebar"
@@ -43,7 +44,7 @@ const Leftsidebar = ({slidein,handleslidein }) => {
         </div>
       </nav>
     </div>
-  )
-}
+  );
+};
 
-export default Leftsidebar
+export default Leftsidebar;

@@ -24,7 +24,7 @@ const Auth = () => {
         dispatch(signup({name,email,password},navigate))
         console.log(name,password,email)
     }else{
-      dispatch(signup({email,password},navigate))
+      dispatch(login({email,password},navigate))
         console.log(email,password);
     }
   }
