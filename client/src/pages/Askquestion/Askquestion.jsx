@@ -1,20 +1,24 @@
 import React, { useState } from "react";
 import "./Askquestion.css";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { askquestion } from "../../action/question";
 
 const Askquestion = () => {
   const navigate = useNavigate();
-  const user = 1;
+  const dispatch=useDispatch();
+  const user = useSelector((state)=>state.currentuserreducer);
   const [questiontitle, setquestiontitle]=useState("");
   const [questionbody, setquestionbody]=useState("");
-  const [questiontag, setquestiontags]=useState("");
+  const [questiontags, setquestiontags]=useState("");
 const handlesubmit=(e)=>{
     e.preventDefault();
     if(user){
-        if(questionbody && questiontitle && questiontag){
+        if(questionbody && questiontitle && questiontags){
+            dispatch(askquestion({questiontitle,questionbody,questiontags,userposted:user.result.name},navigate))
             alert("you have successfully posted a question")
             console.log(questionbody,
-                questiontag,questiontitle
+                questiontags,questiontitle
             )
         }
         else{

@@ -6,40 +6,16 @@ import downvote from "../../assets/sort-down.svg"
 import './Question.css'
 import Avatar from '../../Component/Avatar/Avatar'
 import Displayanswer from './Displayanswer'
+import { useSelector,useDispatch } from 'react-redux'
 import { Link, useNavigate, useLocation, useParams } from 'react-router-dom'
-
+import { deletequestion, votequestion } from '../../action/question'
 const Questiondetails = () => {
-  const {id}=useParams();
   const [answer,setanswer]=useState("")
-  const questionlist=[{
-    _id:"q1",
-    questiontitle:"How to implement binary search",
-    questionbody:"I am trying to implementjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj hjgggggggggggggggggggggggg",
-    questiontags:["Python","Mern"],
-    noofanswers:2,
-    upvote:["user123","user456"],
-    downvote:["user789"],
-    userposted:"codeNewbie",
-    userid:"u12345",
-    askedon:"2024-06-10T12:00:00Z",
-    answer:[
-        {
-            answerbody:"Here's a simple example",
-            useranswered:"algoexpert",
-            userid:"u67890",
-            answeredon:"2024-06-10T13:00:00Z"
-        },
-        {
-            answerbody:"To add to the previous one",
-            useranswered:"TechGuru",
-            userid:"u112233",
-            answeredon:"2024-06-10T14:00:00Z"
-        }
-    ]
-  }];
-  
+  const dispatch=useDispatch();
+  const questionlist=useSelector((state)=>state.questionreducer)
+  const {id}=useParams();
 //   console.log(id);
-  const user=null
+  const user=useSelector((state)=>state.currentuserreducer)
   const location=useLocation()
   const navigate=useNavigate()
   const url="http://localhost:3000"
@@ -61,28 +37,32 @@ const Questiondetails = () => {
     alert("Copied url :"+url+location.pathname)
   }
   const handledelete=()=>{
-
+    dispatch(deletequestion(id,navigate))
   }
   const handleupvote=()=>{
     if(user===null){
         alert("Please login or Signup to answer the question")
         navigate('/Auth')
+    }else{
+        dispatch(votequestion(id,"upvote"))
     }
   }
   const handledownvote=()=>{
     if(user===null){
         alert("Please login or Signup to answer the question")
         navigate('/Auth')
+    }else{
+        dispatch(votequestion(id,"downvote"))
     }
   }
   
   return (
     <div className="question-details-page">
-        {questionlist===null?(
+        {questionlist.data===null?(
             <h1>Loading...</h1>
         ):(
             <>
-            {questionlist.filter((question)=>question._id===id).map((question)=>(
+            {questionlist.data.filter((question)=>question._id===id).map((question)=>(
                 <div key={question._id}>
                     <section className='question-details-container'>
                         <h1>{question.questiontitle}</h1>
