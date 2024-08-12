@@ -2,7 +2,7 @@ import React, {useEffect} from 'react'
 import {Link, useNavigate} from 'react-router-dom'
 import {userSelector, useDispatch, useSelector} from "react-redux"
 import bars from '../../assets/bars-solid.svg'
-import logo from '../../assets/logo.png'
+import logo from '../../assets/logo1.png'
 import search from '../../assets/search-solid.svg'
 import Avatar from '../Avatar/Avatar'
 import './navbar.css'
@@ -37,7 +37,7 @@ function Navbar({handleslidein}) {
             </button>
             <div className="navbar-1">
                 <Link to ='/' className='nav-item nav-logo'>
-                <img src={logo} alt="logo" width="120" /></Link>
+                <img src={logo} alt="logo" width="40" /></Link>
                 <Link to='/' className='nav-item nav-btn res-nav'>
                 About</Link>
                 <Link to='/' className='nav-item nav-btn res-nav'>

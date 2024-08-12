@@ -15,8 +15,9 @@ const Questionschema=mongoose.Schema({
             answerbody:String,
             useranswered:String,
             userid:String,
-            answeredon:{type:Date,default:Date.now}
+            answeredon:{type:Date,default:Date.now},
         },
     ],
 });
-export default mongoose.model("Question",Questionschema)
+
+export default mongoose.model("Question",Questionschema);

@@ -7,6 +7,6 @@ const router=express.Router();
 router.post("/Ask",auth, Askquestion);
 router.get("/get",getallquestion);
 router.delete("/delete/:id",auth,deletequestion);
-router.patch("/vote/:id",auth,votequestion)
+router.patch("/vote/:id",auth,votequestion);
 
 export default router;

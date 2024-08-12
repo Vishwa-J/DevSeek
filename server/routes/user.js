@@ -8,8 +8,7 @@ const router=express.Router();
 router.post("/signup",signup);
 router.post("/login",login);
 
-router.get("/getallusers",getallusers)
-
-router.patch("/update/:id",auth,updateprofile)
+router.get("/getallusers",getallusers);
+router.patch("/update/:id",auth,updateprofile);
  
-export default router 
+export default router;

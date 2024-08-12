@@ -16,7 +16,6 @@ export const postanswer=async(req,res)=>{
         res.status(200).json(updatequestion)
     } catch (error) {
         res.status(404).json({message:"error in uploading"});
-        return
     }
 }
 
@@ -26,7 +25,7 @@ const updatenoofquestion=async(_id,noofanswers)=>{
             $set:{noofanswers:noofanswers},
         });
     } catch (error) {
-        console.log(error)
+        console.log(error);
     }
 }
 
@@ -47,7 +46,6 @@ export const deleteanswer=async(req,res)=>{
         );
         res.status(200).json({message:"successfully deleted.."})
     } catch (error) {
-        res.status(404).json({message:"error in deleting.."});
-        return
+        res.status(405).json(error);
     }
-}
+};

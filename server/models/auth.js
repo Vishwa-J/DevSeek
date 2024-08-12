@@ -5,7 +5,7 @@ const userschema=mongoose.Schema({
     password:{type:String, required:true},
     about:{type:String},
     tags:{type:[String]},
-    joinedon:{type:Date, default:Date.now}  
-})
+    joinedon:{type:Date, default:Date.now},
+});
 
-export default mongoose.model("User", userschema)
+export default mongoose.model("User", userschema);

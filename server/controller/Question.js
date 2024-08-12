@@ -9,20 +9,17 @@ export const Askquestion=async(req,res)=>{
         await postquestion.save();
         res.status(200).json("Posted a question successfully");
     } catch (error) {
-        console.log(error)
-        res.status(404).json("couldn't post a new question");
-        return
+        console.log(error);
+        res.status(409).json("couldn't post a new question");
     }
 };
 
 export const getallquestion=async(req,res)=>{
     try {
         const questionlist=await Question.find().sort({askedon:-1});
-        res.status(200).json(questionlist)
+        res.status(200).json(questionlist);
     } catch (error) {
-        console.log(error)
         res.status(404).json({message:error.message});
-        return
     }
 };
 
@@ -32,11 +29,10 @@ export const deletequestion=async(req,res)=>{
         return res.status(404).send("question unavailable...");
     }
     try {
-        await Question.findByIdAndDelete(_id);
-        res.status(200).json({message:"successfully deleted"})
+        await Question.findByIdAndRemove(_id);
+        res.status(200).json({message:"successfully deleted..."})
     } catch (error) {
         res.status(404).json({message:error.message});
-        return
     }
 };
 
@@ -49,7 +45,7 @@ export const votequestion=async(req,res)=>{
     }
     try {
         const question=await Question.findById(_id);
-        const upindex=question.upvote.findIndex((id)=>id===String(userid))
+        const upindex=question.upvote.findIndex((id)=>id===String(userid));
         const downindex=question.downvote.findIndex((id)=>id===String(userid))
         if(value==="upvote"){
             if(downindex!==-1){
@@ -67,7 +63,7 @@ export const votequestion=async(req,res)=>{
             if(downindex===-1){
                 question.downvote.push(userid);
             }else{
-                question.downvote=question.downvote.filter((id)=>id!==String(userid))
+                question.downvote=question.downvote.filter((id)=>id!==String(userid));
             }
         }
         await Question.findByIdAndUpdate(_id,question);
@@ -77,4 +73,4 @@ export const votequestion=async(req,res)=>{
         res.status(404).json({message:"id not found"});
         return
     }
-}
+};
