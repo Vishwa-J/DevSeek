@@ -32,7 +32,7 @@ const updatenoofquestion=async(_id,noofanswers)=>{
 
 export const deleteanswer=async(req,res)=>{
     const {id:_id}=req.params;
-    const {answerid,noofanswers}=req.body
+    const {answerid,noofanswers}=req.body;
     if(!mongoose.Types.ObjectId.isValid(_id)){
         return res.status(404).send("question unavailable...");
     }

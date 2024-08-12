@@ -4,7 +4,7 @@ const Questionschema=mongoose.Schema({
     questiontitle:{type:String, required:"Question must have a title"},
     questionbody:{type:String, required:"Question must have a body"},
     questiontags:{type:[String], required:"Question must have a tag"},
-    noofanswers:{type:[String],default:0},
+    noofanswers:{type:Number,default:0},
     upvote:{type:[String],default:[]},
     downvote:{type:[String],default:[]},
     userposted:{type:String,required:"Question must have an author"},

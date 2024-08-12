@@ -8,7 +8,7 @@ import Avatar from '../../Component/Avatar/Avatar'
 import Displayanswer from './Displayanswer'
 import { useSelector,useDispatch } from 'react-redux'
 import { Link, useNavigate, useLocation, useParams } from 'react-router-dom'
-import { deletequestion, votequestion } from '../../action/question'
+import { deletequestion, votequestion,postanswer } from '../../action/question'
 const Questiondetails = () => {
   const [answer,setanswer]=useState("")
   const dispatch=useDispatch();
@@ -28,6 +28,10 @@ const Questiondetails = () => {
             if(answer===""){
                 alert("Enter an answer before submitting")
             }else{
+                dispatch(postanswer({id,
+                    noofanswers:answerlength+1,
+                    answerbody:answer,
+                    useranswered:user.result.name}));
                 setanswer("")
             }
         }

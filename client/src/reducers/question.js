@@ -3,10 +3,11 @@ const questionreducer=(state={data:null},action)=>{
         case "POST_QUESTION":
             return{...state};
         case "FETCH_ALL_QUESTIONS":
-            return{...state,data:action.payload}
+            return{...state,data:action.payload};
+        case "POST_ANSWER":
+            return{...state};
         default:
             return state;
     }
 };
-
 export default questionreducer;
