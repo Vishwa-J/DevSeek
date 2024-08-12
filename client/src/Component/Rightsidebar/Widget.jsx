@@ -35,7 +35,7 @@ function Widget() {
         <div className="right-sidebar-div-2">
           <img src={blacklogo} alt="pen" width="18" />
           <p>
-            Outdated Answers: accepted answer is now unpinned on Stack Overflow
+            Outdated Answers: accepted answer is now unpinned on Devseek
           </p>
         </div>
       </div>
